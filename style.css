@@ -11,3 +11,30 @@ canvas{
     height: 90vh;
 
 }
+
+
+@media screen and (max-width: 400px) {
+    canvas{
+        border: solid 0.2em #fff;
+        height: 80vh;
+    
+    }
+    button{
+ 
+
+
+        height: 70px;
+        width:70px ;
+    }
+
+    #button{
+         display: flex;
+        justify-content: center;
+    
+    }
+
+    #buttonTwo{
+        display: flex;
+        flex-direction: column;
+    }
+}

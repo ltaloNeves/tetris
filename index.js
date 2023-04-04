@@ -261,10 +261,66 @@ const player = {
     score: 0,
 };
 
+
+
 playerReset();
 updateScore();
 update();  
 
 
 
+const lefBtn = document.getElementById('left-btn');
+const righBtn = document.getElementById('right-btn');
+const downBtn = document.getElementById('down-btn');
+const rotateBtn = document.getElementById('rotate-btn');
 
+lefBtn.addEventListener("touchstart", () => {
+    playerMove(-1);
+});
+
+righBtn.addEventListener("touchstart", () => {
+    playerMove(1);
+
+});
+
+downBtn.addEventListener("touchstart", () => {
+    dropInterval = 10;
+});
+
+rotateBtn.addEventListener("touchstart", ( ) => {
+    playerRotate(1);
+});
+
+lefBtn.addEventListener("touchend", () => {
+    playerMove(0);
+});
+
+righBtn.addEventListener("touchend", () => {
+    playerMove(0);
+});
+
+downBtn.addEventListener("touchend", () => {
+    dropInterval = dropIntervalDefault;
+
+});
+
+rotateBtn.addEventListener("touchend", () => {
+    playerRotate(-1);
+});
+
+
+function playerMove(direction){
+    player.pos.x += direction;
+    if (collide(arena, player)){
+        player.pos.x -= direction;
+    }
+}
+
+function playerRotate(direction){
+    rotate (player.matrix, direction);
+    if (collide(arena, player)){
+        rotate(player.matrix, -direction);
+    }
+}
+
+const dropIntervalDefault = 1000;

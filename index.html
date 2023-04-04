@@ -11,9 +11,32 @@
    
     <div id="score"></div>
     <canvas id="tetris" width="240" height="400">
+
     </canvas> 
+    <br>
+
+    <div id="button">
+        <button id="left-btn"><ion-icon name="arrow-back-outline"></ion-icon></button>
+        <button id="right-btn"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+        <button id="down-btn"><ion-icon name="arrow-down-outline"></ion-icon></button>
+        <button id="rotate-btn"><ion-icon name="arrow-up-outline"></ion-icon></button>       
+            
+    </div>
+
+
+    <audio autoplay loop >
+        <source src="./audio/tetris.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+
+   
 
     <script src="index.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
 </body>
 </html>
